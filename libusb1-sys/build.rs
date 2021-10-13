@@ -184,7 +184,8 @@ fn main() {
             .expect("EXTERNAL_LIBUSB_LIB is required with EXTERNAL_LIBUSB set");
 
         println!("cargo:include={}/libusb.h", include_dir);
-        println!("cargo:rustc-link-lib=dylib={}/libusb.so", lib_dir);
+        println!("cargo:rustc-link-search=native={}", lib_dir);
+        println!("cargo:rustc-link-lib=dylib=usb");
         return;
     }
 
