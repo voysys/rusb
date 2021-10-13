@@ -185,7 +185,7 @@ fn main() {
 
         println!("cargo:include={}/libusb.h", include_dir);
         println!("cargo:rustc-link-search=native={}", lib_dir);
-        println!("cargo:rustc-link-lib=dylib=usb");
+        println!("cargo:rustc-link-lib=dylib=usb-1.0");
         return;
     }
 
