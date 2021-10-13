@@ -176,6 +176,8 @@ fn make_source() {
 }
 
 fn main() {
+    return;
+
     let statik = std::env::var("CARGO_CFG_TARGET_FEATURE")
         .map(|s| s.contains("crt-static"))
         .unwrap_or_default();
