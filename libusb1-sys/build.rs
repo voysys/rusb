@@ -176,7 +176,13 @@ fn make_source() {
 }
 
 fn main() {
-    return;
+    if std::env::var("CARGO_CFG_TARGET_ENV") == Ok("musl".into())
+        && std::env::var("CARGO_CFG_TARGET_ARCH") == Ok("arm".into())
+    {
+        panic!("{:?}", env::current_dir());
+        //println!("cargo:include={}", third.to_str().unwrap());
+        return;
+    }
 
     let statik = std::env::var("CARGO_CFG_TARGET_FEATURE")
         .map(|s| s.contains("crt-static"))
