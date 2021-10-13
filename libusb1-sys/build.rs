@@ -179,7 +179,7 @@ fn main() {
     if std::env::var("CARGO_CFG_TARGET_ENV") == Ok("musl".into())
         && std::env::var("CARGO_CFG_TARGET_ARCH") == Ok("arm".into())
     {
-        panic!("{:?}", env::vars().collect::<Vec<_>>());
+        panic!("{:#?}", env::vars().collect::<Vec<_>>());
         //println!("cargo:include={}", third.to_str().unwrap());
         return;
     }
